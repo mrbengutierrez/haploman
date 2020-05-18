@@ -1,0 +1,98 @@
+
+.body {
+	width: 100%;
+	margin: 0;
+	min-height: 1px;
+}
+
+/*headings*/
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Josefin Slab', serif;
+}
+
+p, a {
+	font-family: 'Raleway', sans-serif;
+}
+
+.big-heading {
+	font-weight: 700;
+	font-size: 6rem;
+}
+
+.sub-heading {
+	font-weight: 600;
+	font-size: 2.5rem;
+}
+
+
+
+
+
+.navigation-bar {
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+
+.section {
+	padding: 7% 15%;
+}
+
+
+/* Hero Section */
+
+.hero-section {
+	padding: 15% 15% 7%;
+	background-color: gray;
+	color: white;
+}
+
+.hero-image {
+	border-radius: 25%;
+	vertical-align: right;
+	width: 100%;
+	margin: auto 0;
+}
+
+.hero-container {
+	margin: auto 0;
+}
+
+.my-name {
+	margin-bottom: 10%;
+}
+
+
+
+
+/* Trade Section */
+.trade-section {
+	background-color: #8ec5f5;
+	text-align: center;
+}
+
+
+.trade-heading {
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+.trade-image {
+	width: 100%;
+	border-radius: 15%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.trade-box {
+	padding: 5%;
+}
+
+.trade-paragraph {
+	font-size: 1.5rem;
+	color: #616161;
+}
+
+

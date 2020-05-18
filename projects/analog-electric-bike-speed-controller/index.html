@@ -1,0 +1,62 @@
+<html>
+
+
+
+
+<h1 class="center"><strong>Analog Electric Bike Speed Controller with Regenerative Braking</strong></h1>
+
+
+<br />
+
+<h2 class="center">Brief Description</h2>
+<hr class="divider">
+<div id=extra-space></div>
+
+<p>My partner Alan Casallas and I built an analog control system that controlled the speed of a brushless DC motor on an electric bicycle and harnessed the energy during the braking process. To drive the BLDC motor on the bicycle, we built a closed-loop feedback controlled circuit. This consisted of a three phase inverter circuit, an amplifier circuit, and
+	a commutation circuit to generate the waveforms needed to commutate and spin the motor. A feedback circuit was constructed to drive the motor at a requested angular velocity. We designed analog closed loop controlled buck converter to increase the efficiency of our motor controller. We also implemented a regenerative braking circuit, which could potentially recharge the battery from power delivered by the motor as the bicycle wheels are braking. The regenerative braking circuit consisted of a boost converter that was self powered from its own output. The challenge was in combining the three-phase currents leaving the motor as it was braking
+to safely recharge the battery in a power efficient manner.</p>
+
+
+<div class="center">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/gX2po_Jw00k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<h2 class="center">Project Report</h2>
+<hr class="divider">
+<div id=extra-space></div>
+
+<div class="center">
+	<iframe src="https://drive.google.com/file/d/1fMhbgv59dODOLptNv4eTrvCFwPqEvJyU/preview" width="640" height="480"></iframe>
+</div>
+
+
+
+
+
+<style>
+	.center {
+		vertical-align: center;
+		text-align: center;
+		width: 100%;
+	}
+
+	p, li, h1, h2, h3, h4, h5, h6 {
+		color: black;
+	}
+
+	/* Solid border */
+	hr.divider {
+		border-top: 3px solid black;
+		width: 30%;
+		vertical-align: middle;
+		margin: 0 auto;
+	}
+
+	#extra-space {
+		padding: 1em;
+	}
+</style>
+
+
+
+</html>

@@ -1,0 +1,177 @@
+
+
+
+<html>
+
+
+
+
+<h1 class="center"><strong>2.12 Collaborative Competition Robot</strong></h1>
+
+
+<br />
+
+<h2 class="center">Brief Description</h2>
+<hr class="divider">
+<div id=extra-space></div>
+
+<p>
+	This collaborative manipulator was made as part of a team project for the 2.12 Collaborative Robotics Competition. The core idea behind the competition was to develop a manipulator for hemiplegic patients. Hemiplegia is a condition caused by brain damage or spinal cord injury that leads to paralysis on one side of the body. The tasks that the manipulator needed to assist with were drawer opening and garment donning. As part of the competition, our project budget was limited to $500 or less.
+</p> 
+
+<h2 class="center">Serial Elastic Actuator (SEA)</h2>
+<hr class="divider">
+<div id=extra-space></div>
+
+<p>
+	The SEA was used to help determine what the applied force was on the end effector. Our SEA used two aluminum flexures in series as an elastic element. It had a rigid structure with fully supported shafts. We operated the SEA with state space control and utilized communication via Robot Operating System (ROS). In order to account for gear backlash, we used initial arm movements as a calibration step. This allowed for more accurate force sensing
+</p> 
+
+<h2 class="center">Kinect Camera</h2>
+<hr class="divider">
+<div id=extra-space></div>
+
+<p>
+	We used a kinect camera to help the robot recognize where its target was. For the drawer opening task, there was an AprilTag on the front of the drawer that the kinect camera could use. We chose to use a kinect camera because it was able to provide red-green-blue (RGB) images at a reasonable frame rate. We utilized a RGB-Depth pixel map and transformed into real world coordinates. We used machine vision to recognize and localize on obstacles and targets.
+</p> 
+
+<h2 class="center">Inertial Measurement Unit (IMU)</h2>
+<hr class="divider">
+<div id=extra-space></div>
+
+<p>
+	An IMU was used for remote control operation of the manipulator. The idea was that the hemiplegic patient could tilt a lightweight remote control with their disabled arm to control the arm. They could use their functional arm to do tasks while using their disabled arm to control their assistive robot. We chose to use an IMU for our remote control because it can measure three-axis acceleration in pitch, yaw, and roll. This pitch, yaw, and roll was translated to XYZ velocity commands. We also had a button on the remote that would enable or disable tracking.
+</p> 
+
+<h2 class="center">Drawer Opening</h2>
+<hr class="divider">
+<div id=extra-space></div>
+
+<p>
+	For the drawer opening task, we had to assist a hemiplegic patient with opening a drawer. The hemiplegic patient would use their functional arm to grab one end of the drawer and the manipulator would grab the other end of the drawer. The challenges in this task were localization of the drawer's handle, gripping the handle, and human-robot coordination.
+</p>
+
+<p>
+	To accomplish this task we made our own wearable motion controller. An IMU on the remote control would track human intention. The user could press a button on the remote to activate grasp or imitation initiation. The remote control communicated wirelessly via bluetooth with the manipulator computer. Hence, the position control of the manipulator arm was IMU-controlled.
+</p>
+
+<p>
+	One of our concerns during the competition was patient safety. The SEA that we designed had passive safety because of the springyness of the elastic element meant that the end effector had a finite stiffness. This would help to passively reduce the impact of a collisition with a user.</p>
+</p>
+
+
+<h2 class="center">Garment Donning</h2>
+<hr class="divider">
+<div id=extra-space></div>
+
+<p>
+	For the garment donning task, we had to assist a hemiplegic patient with wrapping a towel. The key challenges were trajectory planning, avoiding the patient, and developing position and velocity control.
+</p>
+
+<p>
+	The way we implemented the software in the competition was by hard coding path information in Matlab and converting the code into python and ROS. We simulated a path to avoid collisions with an average-sized patient. We used velocity control and waypoints to develop the path. The position control was derived from forward kinematics.
+</p>
+
+
+
+<h2 class="center">Team</h2>
+<hr class="divider">
+<div id=extra-space></div>
+
+<div class="center">
+	<p><strong>Sensors</strong></p>
+	<p>Joe Huang, Xiaotong Zhang</p>
+
+	<p><strong>Serial Elastic Actuator</strong></p>
+	<p>Krithika Swami, Taylor V'Dovec, Jason Fischman</p>
+
+	<p><strong>Manipulator</strong></p>
+	<p>Benjamin Gutierrez, Jasmin Palmer</p>
+</div>
+
+
+
+
+<div class="center">
+	<!---
+	<img src="https://drive.google.com/thumbnail?id=1fGhUD5pPMYitJhl6rECK9bbNy-eeFbcE">
+
+	<img src="https://drive.google.com/thumbnail?id=1X8UbhIzDb11hjEuRu0w8QarK-SWLL10Q">
+	--->
+	<div id=extra-space></div>
+
+	<a href="https://drive.google.com/uc?export=view&id=1fGhUD5pPMYitJhl6rECK9bbNy-eeFbcE"><img src="https://drive.google.com/uc?export=view&id=1fGhUD5pPMYitJhl6rECK9bbNy-eeFbcE" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
+
+	<div id=extra-space></div>
+
+	<a href="https://drive.google.com/uc?export=view&id=1X8UbhIzDb11hjEuRu0w8QarK-SWLL10Q"><img src="https://drive.google.com/uc?export=view&id=1X8UbhIzDb11hjEuRu0w8QarK-SWLL10Q" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
+
+	<div id=extra-space></div>
+
+</div>
+
+
+<h2 class="center">Competition (Audio Not Available)</h2>
+
+<hr class="divider">
+<div id=extra-space></div>
+
+<div class="center">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/--vgBtn6s64" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<h2 class="center">Testing the Robot</h2>
+
+<hr class="divider">
+<div id=extra-space></div>
+
+<div class="center">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/wvQuXjFohh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div id=extra-space></div>
+
+<div class="center">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/wvQuXjFohh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div id=extra-space></div>
+
+<div class="center">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/wvQuXjFohh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+
+<style>
+	.center {
+		vertical-align: center;
+		text-align: center;
+		width: 100%;
+	}
+
+	p, li, h1, h2, h3, h4, h5, h6 {
+		color: black;
+	}
+
+	/* Solid border */
+	hr.divider {
+		border-top: 3px solid black;
+		width: 40%;
+		vertical-align: middle;
+		margin: 0 auto;
+	}
+
+	#extra-space {
+		padding: 1em;
+	}
+
+	#centered-team-list {
+		text-align: center;
+	}
+
+</style>
+
+
+
+</html>
