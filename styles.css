@@ -16,26 +16,33 @@ p, a {
 
 .big-heading {
 	font-weight: 700;
-	font-size: 600%;
+	font-size: calc(4rem + 2vw);
 }
 
 .sub-heading {
 	font-weight: 600;
-	font-size: 250%;
+	font-size: calc(1.5rem + 1vw);
 }
 
 
 
 
-
+/* Navigation Bar */
 .navigation-bar {
-  overflow: hidden;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+	overflow: hidden;
+	position: fixed; /* Set the navbar to fixed position */
+	top: 0; /* Position the navbar at the top of the page */
+	width: 100%; /* Full width */
+	z-index: 100;
+}
+
+.navigation-spacing {
+	padding: 1rem auto;
 }
 
 
+
+/* Sections */
 .section {
 	padding: 7% 15%;
 }
@@ -44,16 +51,24 @@ p, a {
 /* Hero Section */
 
 .hero-section {
-	padding: 15% 15% 7%;
+	padding: 7% 15% 7%;
 	background-color: gray;
 	color: white;
-	text-align: center; 
+	text-align: left; 
+}
+
+/* Medium Screen Size Changes */
+@media only screen and (max-width: 768px) {
+	.hero-section {
+		text-align: center;
+	}
 }
 
 .hero-image {
 	border-radius: 25%;
 	width: 100%;
 	margin: auto 0;
+	border: 5px solid white;
 }
 
 .hero-container {
@@ -76,7 +91,7 @@ p, a {
 
 .trade-heading {
 	font-weight: 600;
-	font-size: 200%;
+	font-size: 2rem;
 }
 
 .trade-image {
