@@ -15,7 +15,7 @@
 */
 
 
-.body {
+body {
 	width: 100%;
 	margin: 0;
 	min-height: 1px;
@@ -29,48 +29,50 @@ h1, h2, h3, h4, h5, h6 {
 
 p, a {
 	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
 }
 
 .extra-large-heading {
 	font-weight: 700;
-	font-size: 6.5rem;
+	font-size: 6rem;
 }
 
 .large-heading {
 	font-weight: 700;
-	font-size: 5rem;
+	font-size: 4.5rem;
 }
 
 .medium-heading {
 	font-weight: 600;
-	font-size: 3rem;
+	font-size: 2.5rem;
 }
 
 @media only screen and (max-width:992px) { /* Large Screen Size Changes */
 	.extra-large-heading {
-		font-size: 5rem;
+		font-size: 4rem;
 	}
 
 	.large-heading {
-		font-size: 3rem;
+		font-size: 2.5rem;
 	}
 
 	.medium-heading {
-		font-size: 2rem;
+		font-size: 1.5rem;
 	}
 }
 
 @media only screen and (max-width:576px) { /* Small Screen Size Changes */
 	.extra-large-heading {
-		font-size: 3rem;
+		font-size: 2.5rem;
 	}
 
 	.large-heading {
-		font-size: 2rem;
+		font-size: 1.5rem;
 	}
 
 	.medium-heading {
-		font-size: 1.5rem;
+		font-size: 1rem;
 	}
 }
 
@@ -97,12 +99,34 @@ p, a {
 	padding: 3% 15%;
 }
 
+.section-ying {
+	/*	background: rgb(79,79,79);
+	background: linear-gradient(90deg, rgba(79,79,79,1) 0%, rgba(135,135,135,1) 42%, rgba(201,201,201,1) 100%);*/
+
+	background: #485563;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	color: white;
+}
+
+.section-yang {
+/*	background: rgb(60,206,242);
+	background: linear-gradient(90deg, rgba(60,206,242,1) 0%, rgba(176,235,244,1) 42%, rgba(201,201,201,1) 100%);
+	padding: 7% 12.5% 3%;
+	margin: 0;*/
+
+	background: #eacda3;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
 
 /* Hero Section */
 
 .hero-section {
-	background: rgb(79,79,79);
-	background: linear-gradient(90deg, rgba(79,79,79,1) 0%, rgba(135,135,135,1) 42%, rgba(201,201,201,1) 100%);
+
 	color: white;
 	text-align: left; 
 }
@@ -132,25 +156,16 @@ p, a {
 
 
 /* Trade Section */
-.trade-section {
-	/*	background: rgb(0,85,107);
-	background: linear-gradient(90deg, rgba(0,85,107,1) 0%, rgba(53,125,135,1) 42%, rgba(201,201,201,1) 100%);*/
-	background: rgb(60,206,242);
-	background: linear-gradient(90deg, rgba(60,206,242,1) 0%, rgba(176,235,244,1) 42%, rgba(201,201,201,1) 100%);
-	text-align: center;
-	padding: 7% 12.5%;
-
-}
 
 .trade-image {
 	width: 100%;
 	border-radius: 15%;
-	margin-top: 30px;
-	margin-bottom: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .trade-box {
-	padding: 5%;
+	padding: 2% 5%;
 }
 
 
@@ -172,22 +187,19 @@ p, a {
 }
 
 .trade-paragraph {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	color: #616161;
 }
 
 
 /* About Me */
 
-.about-me {
-	text-align: center;
-	background: rgb(79,79,79);
-	background: linear-gradient(90deg, rgba(79,79,79,1) 0%, rgba(135,135,135,1) 42%, rgba(201,201,201,1) 100%);
-}
-
 .about-me p {
 	text-align: left;
 }
+
+
+/* Contact Me Section */
 
 
 
