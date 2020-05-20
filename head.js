@@ -1,29 +1,29 @@
 // Shared head files for all pages 
 
 
-function getRootFilePath(rootFile) {
-  /* Returns a string of path to rootFile
+// function getRootFilePath(rootFile) {
+//   /* Returns a string of path to rootFile
 
-  Parameters:
-  rootFile (string): name of file in root
+//   Parameters:
+//   rootFile (string): name of file in root
 
-  Returns:
-  (string): path to rootFile from current directory
-  */
+//   Returns:
+//   (string): path to rootFile from current directory
+//   */
 
-    var folders = window.location.pathname.split('/');
-    console.log(folders);
-    document.write(folders);
-    folders.pop();
-    var rootName = "haploman";
-    var parentString = "";
-    while (folders.pop() !== rootName) {
-      parentString += "../";
-    }
+//     var folders = window.location.pathname.split('/');
+//     console.log(folders);
+//     document.write(folders);
+//     folders.pop();
+//     var rootName = "haploman";
+//     var parentString = "";
+//     while (folders.pop() !== rootName) {
+//       parentString += "../";
+//     }
 
-    var pathToRootFile = parentString + rootFile;
-    return pathToRootFile;
-}
+//     var pathToRootFile = parentString + rootFile;
+//     return pathToRootFile;
+// }
 
 document.write(
  '<!-- Required meta tags -->\
@@ -40,4 +40,4 @@ document.write(
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">\
  \
  <!-- External Universal Stylesheet -->\
- <link rel="stylesheet" type="text/css" href="' + getRootFilePath("universal-styles.css") + '">');
+ <link rel="stylesheet" type="text/css" href="http://haploman.com/universal-styles.css">');
