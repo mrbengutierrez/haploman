@@ -1,0 +1,75 @@
+
+/* First heading */
+.top-heading {
+  padding-top: 2%;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #0000A0;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  /*border: 3px solid white;*/
+  width: 100%;
+  border-radius: 1em;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  border-radius: 1em;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: blue;}
+
+@media only screen and (min-width: 600px) {
+  .column {
+    float: left;
+    width: 50%;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+.education-heading {
+  text-align: center;
+  color: black;
+  padding-bottom: 0.3em;
+  padding-top: 0.6em;
+}
+
+/* Solid border */
+hr.divider {
+  border-top: 3px solid black;
+  width: 30%;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+
+#extra-space {
+  padding: 1em;
+}
+
