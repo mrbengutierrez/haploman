@@ -2,6 +2,8 @@
 
 
 
+
+
 var html = '<nav class="navbar navbar-expand-md navbar-dark bg-dark navigation-bar">\
     <a class="navbar-brand" href="www.haploman.com">Haploman</a>\
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler_01" aria-controls="navbarToggler_01" aria-expanded="false" aria-label="Toggle navigation">\

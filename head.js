@@ -12,6 +12,7 @@ function getRootFilePath(rootFile) {
   */
 
     var folders = window.location.pathname.split('/');
+    console.log(folders);
     folders.pop();
     var rootName = "haploman";
     var parentString = "";
