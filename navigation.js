@@ -17,10 +17,9 @@ var html = '<nav class="navbar navbar-expand-md navbar-dark bg-dark navigation-b
       </ul>\
     </div>\
   </nav>\
-  <div class="navigation-spacing"><p> </p></div>';
+  <div class="navigation-spacing"></div>';
 
 
-// document.getElementById('nav-placeholder').innerHTML = html;
 document.write(html);
 
 
