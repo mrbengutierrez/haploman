@@ -88,16 +88,18 @@ p, a {
 	top: 0; /* Position the navbar at the top of the page */
 	width: 100%; /* Full width */
 	z-index: 100;
-	display:hidden;
+	/*visibility: hidden;*/
+	/*opacity: 0.5;*/
 }
 
-/*.navigation-spacing {
-	margin: 5px auto;
-	background: #485563;  
+.navigation-spacing {
+	/*margin: 5px auto;*/
+/*	background: #485563;  
 	background: -webkit-linear-gradient(to right, #29323c, #485563);   Chrome 10-25, Safari 5.1-6 
-	background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+	background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	/*border-bottom: 1px solid white;*/
 }
-*/
+
 
 
 

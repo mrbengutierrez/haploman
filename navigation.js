@@ -26,7 +26,7 @@ var html = '\
   </nav>\
   \
   <div class="navigation-spacing navbar-expand-md navbar-dark bg-dark">\
-  <a class="navbar-brand" href=""> </a>\
+  <p class="navbar-brand" href="">Haploman</p>\
   </div>';
 
 
