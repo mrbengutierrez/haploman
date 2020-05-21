@@ -1,0 +1,89 @@
+/* description
+{
+	"name": "title of project",
+	"permalink": "relative link name to project",
+	"date": "date project completely (approximately),
+	"tags": [array of tags related to project
+			first tag represents most important topic related to project]
+},
+*/
+
+
+/* template
+		{
+			"name": ,
+			"permalink": ,
+			"date": ,
+			"tags": []
+		},
+*/
+
+{
+	"projects": [
+		{
+			"name": "remote control painting robot",
+			"permalink": "remote-control-painting-robot",
+			"date": "2019-01-30",
+			"tags": ["electrical engineering","mechanical engineering"]
+		},
+		{
+			"name": "musical instrument recognizer",
+			"permalink": "musical-instrument-recognizer",
+			"date": "2018-08-26",
+			"tags": ["software engineering", "machine learning"]
+		},
+		{
+			"name": "mobile phone stethoscope",
+			"permalink": "mobile-phone-stethoscope",
+			"date": "2019-05-17",
+			"tags": ["mechanical engineering", "electrical engineering"]
+		},		
+		{
+			"name": "minion yoyos",
+			"permalink": "minion-yoyos",
+			"date": "2019-05-15",
+			"tags": ["mechanical engineering", "manufacturing"]
+		},
+		{
+			"name": "manus home: stroke rehabilitation robot",
+			"permalink": "manus-home-stroke-rehabilitation-robot",
+			"date": "2020-02-01",
+			"tags": ["mechanical engineering","software engineering","robotics"]
+		},		
+		{
+			"name": "induction motor controller",
+			"permalink": "induction-motor-controller",
+			"date": "2018-11-06",
+			"tags": ["electrical engineering","motor control"]
+		},
+		{
+			"name": "elevate: a mechanical seat-lift for wheelchairs",
+			"permalink": "elevate",
+			"date": "2018-12-18",
+			"tags": ["mechanical engineering","product engineering", "product development"]
+		},		
+		{
+			"name": "analog electric bike speed controller with regenerative braking",
+			"permalink": "analog-electric-bike-speed-controller",
+			"date": "2019-05-13",
+			"tags": ["electrical engineering","motor control"]
+		},
+		{
+			"name": "1979 chris craft catalina 350 restoration",
+			"permalink": "1979-chris-craft-catalina-350-restoration",
+			"date": "2020-05-20",
+			"tags": ["mechanical engineering"]
+		},
+		{
+			"name": "2.12 competition robot",
+			"permalink": "212-competition-robot",
+			"date": "2017-12-08",
+			"tags": ["mechanical engineering", "software engineering", "robotics"]
+		}
+
+
+
+	]
+}
+
+
