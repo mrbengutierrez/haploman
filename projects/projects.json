@@ -18,7 +18,7 @@
 		},
 */
 
-{
+projectData = {
 	"projects": [
 		{
 			"name": "remote control painting robot",
@@ -85,5 +85,8 @@
 
 	]
 }
+
+
+
 
 
