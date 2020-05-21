@@ -62,29 +62,17 @@ function main() {
 	});
 
 
-
-
-
-	// Put checkboxes on screen for type of project
-	// add first tags to projectTypes set
-	// var projectTypes = new Set();
-	// for (var i=0; i<projectArray.length; i++) {
-	// 	var projectType = projectArray[i].tags[0];
-	// 	projectTypes.add(projectType);
-	// }
-	// // for every tag
-	// var checkboxArray = [];
-	// projectTypes.forEach(function(projectType) {
-	// 	var checkboxID = generateCheckboxID(projectType)
-	// 	var checkbox = createCheckbox(checkboxID, projectType);
-	// 	checkboxIDMap.set(checkboxID, projectType);
-	// 	checkboxArray.push(checkbox);
-	// });
-	// var checkboxHTML = checkboxArray.join("");
-	// var checkboxDiv = document.querySelector(".project-types");
-	// console.log(checkboxHTML);
-	// checkboxDiv.innerHTML = checkboxHTML;
 }
+
+
+// <input type="radio" id="date" name="sorting" value="date">
+// 				<label for="date">Date</label><br>
+// 				<input type="radio" id="alphabetical" name="sorting" value="alphabetical">
+// 				<label for="alphabetical">Althabetical</label><br>
+// 				<input type="radio" id="project-type" name="sorting" value="project-type">
+// 				<label for="project-type">Project Type</label> 
+
+// function createRadio(radioID, )
 
 function sortByFrequency(arrayToSort) {
 	/* Returns a sorted unique element array based on frequency
