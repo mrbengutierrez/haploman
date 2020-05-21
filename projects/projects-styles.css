@@ -1,0 +1,28 @@
+
+/*
+ * extra small, .col-, <576px
+ * small, .col-sm-, >=576px
+ * medium, .col-md-, >=768px
+ * large, .col-lg-, >=992px
+ * extra large, .col-xl, >=1200px
+ */
+
+body {
+	text-align: left;
+}
+
+@media only screen and (max-width:768px) { /* Medium Screen Size Changes */
+	body {
+		text-align: center;
+	}
+}
+
+.top-heading {
+	text-align: center;
+}
+.project-type {
+	padding: 0%;
+	display: inline-block;
+	margin: 1%;
+}
+

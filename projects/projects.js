@@ -1,6 +1,6 @@
 
 
-var checkboxIdMap = new Map();
+var checkboxIDMap = new Map();
 
 
 function main() {
@@ -13,29 +13,123 @@ function main() {
 	var randomProjectLink = randomProject.permalink;
 	document.querySelector(".random-project").setAttribute("href",randomProjectLink)
 
-
-	// Put checkboxes on screen for type of project
-	var projectTypes = new Set();
+	/* Get all tags (contains duplicate tags) */
+	var tagNames = [];
 	for (var i=0; i<projectArray.length; i++) {
-		var projectType = projectArray[i].tags[0];
-		projectTypes.add(projectType);
+		var projectTags = projectArray[i].tags;
+		tagNames = tagNames.concat(projectTags);
 	}
-	var checkboxArray = [];
-	projectTypes.forEach(function(projectType) {
-		var checkboxID = generateCheckboxID(projectType)
-		var checkbox = createCheckbox(checkboxID, projectType);
-		checkboxIdMap.set(checkboxId, projectType);
-		checkboxArray.push(checkbox);
+
+	/* Sort tags to get unique sorted tags based on frequency */
+	var sortedTags = sortByFrequency(tagNames); 
+
+	// Keep only most popular tags
+	var numberOfTags = 6;
+	var remainingTags = [];
+	if (numberOfTags >= sortedTags.length) {
+		remainingTags = sortedTags;
+	} else {
+		for (var i=0; i<numberOfTags; i++) {
+			var tagName = sortedTags[i];
+			remainingTags.push(tagName);
+		}
+	}
+
+	// Create ids for checkboxes
+	remainingTags.forEach(function(tagName) {
+		var checkboxID = generateCheckboxID(tagName);
+		checkboxIDMap.set(checkboxID,tagName);
 	});
-	var checkboxHTML = checkboxArray.join("");
-	var checkboxDiv = document.querySelector(".project-types");
-	console.log(checkboxHTML);
+
+	// Generate checkboxes into array
+	var checkboxes = [];
+	var checkboxClass = "project-type";
+	checkboxIDMap.forEach(function(tagName,checkboxID) {
+		var checkbox =  createCheckbox(checkboxID, tagName, checkboxClass);
+		checkboxes.push(checkbox);
+	});
+
+	// join checkbox array into a single string of html
+	var checkboxHTML = checkboxes.join("");
+
+	// display checkboxes on screen
+	var checkboxDiv = document.querySelector(".project-types-container");
 	checkboxDiv.innerHTML = checkboxHTML;
 
+	// make sure checkboxes are checked
+	checkboxIDMap.forEach(function(tagName, checkboxID) {
+		document.getElementById(checkboxID).checked = true;
+	});
+
+
+
+
+
+	// Put checkboxes on screen for type of project
+	// add first tags to projectTypes set
+	// var projectTypes = new Set();
+	// for (var i=0; i<projectArray.length; i++) {
+	// 	var projectType = projectArray[i].tags[0];
+	// 	projectTypes.add(projectType);
+	// }
+	// // for every tag
+	// var checkboxArray = [];
+	// projectTypes.forEach(function(projectType) {
+	// 	var checkboxID = generateCheckboxID(projectType)
+	// 	var checkbox = createCheckbox(checkboxID, projectType);
+	// 	checkboxIDMap.set(checkboxID, projectType);
+	// 	checkboxArray.push(checkbox);
+	// });
+	// var checkboxHTML = checkboxArray.join("");
+	// var checkboxDiv = document.querySelector(".project-types");
+	// console.log(checkboxHTML);
+	// checkboxDiv.innerHTML = checkboxHTML;
 }
 
+function sortByFrequency(arrayToSort) {
+	/* Returns a sorted unique element array based on frequency
 
-function rollDice(numSides) {
+	Parameters:
+	arrayToSort (array): array to be sorted
+
+	Returns:
+	(array): a sorted unique element array based on the frequency
+			of elements contained in arrayToSort
+			*/
+
+
+			/* Create frequency map of the arrayToSort */
+			var frequencyMap = new Map();
+			arrayToSort.forEach(function(element) {
+				if (frequencyMap.has(element)) {
+					var newCount = frequencyMap.get(element) + 1;
+					frequencyMap.set(element,newCount);
+				} else {
+					frequencyMap.set(element,1);
+				}
+			});
+
+			var uniqueElementArray = mapKeysToArray(frequencyMap);
+
+			function compareFrequency(a, b) {
+				return frequencyMap.get(b) - frequencyMap.get(a);
+			}
+
+			var sortedArray = uniqueElementArray.sort(compareFrequency);
+			return sortedArray;
+		}
+
+		function mapKeysToArray(map) {
+			/* Returns an array of the keys in a map */
+			var keyArray = [];
+			map.forEach(function(value,key) {
+				keyArray.push(key);
+			});
+			return keyArray;
+		}
+
+
+		function rollDice(numSides) {
 	/*
 	 Rolls a dice with number of sides
 
@@ -66,11 +160,13 @@ function generateCheckboxID(tagName) {
 	return projectType;
 }
 
-function createCheckbox(checkboxID, tagName) {
+function createCheckbox(checkboxID, tagName, className="") {
 	/* Creates checkbox for project types */
 	var checkboxHTML = '\
+	<div class="' + className + '">\
 	<input type="checkbox" id="' + checkboxID  + '" name="project-type" value="' + checkboxID  + '">\
 	<label for="' + checkboxID  + '">' + capitalizeFirstLetter(tagName)  + '</label>\
+	</div>\
 	'
 	return checkboxHTML;
 }
