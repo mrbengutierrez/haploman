@@ -1,8 +1,20 @@
 
 
+
+
+
+
+
+
+
+
+
+
+
 var checkboxIDMap = new Map();
 var radioIDs = ["althabetical-sort","date-sort","project-type-sort"];
-var radioTexts = ["Althabetical","Date","Project Type"]
+var radioTexts = ["Althabetical","Date","Project Type"];
+var compareProjectFunctions = [compareProjectAlphabetical,compareProjectDate,compareProjectProjectType];
 var projectsOnScreen = [];
 
 function main() {
@@ -13,7 +25,7 @@ function main() {
 	/* Fill in random project anchor tag */
 	var randomProject = randomChoice(projectArray);
 	var randomProjectLink = randomProject.permalink;
-	document.querySelector(".random-project").setAttribute("href",randomProjectLink)
+	document.querySelector(".random-project").setAttribute("href",randomProjectLink);
 
 	/* Get all tags (contains duplicate tags) */
 	var tagNames = [];
@@ -86,11 +98,10 @@ function main() {
 	// add event listeners to radio buttons
 	radioIDs.forEach(function(radioID) {
 		var radioElement = document.getElementById(radioID);
-		radioElement.addEventListener("change", sortProjects);
+		radioElement.addEventListener("change", filterProjects);
 	}); 
 
 	filterProjects();
-	sortProjects();
 
 
 
@@ -109,6 +120,7 @@ function filterProjects() {
 	});
 
 	// get projects with tag
+	projectsOnScreen = []; // make sure to empty projects on screen
 	var projectArray = projectData.projects;
 	projectArray.forEach(function(project) {
 		var currentTags = project.tags;
@@ -116,16 +128,34 @@ function filterProjects() {
 			projectsOnScreen.push(project);
 		}
 	});
+	sortProjects();
+}
 
+function sortProjects() {
+	/* Sorts projects on screen based on which radio button is checked */
+	for (var i=0; i<radioIDs.length; i++) {
+		var radioID = radioIDs[i];
+		var radioButton = document.getElementById(radioID);
+		if (radioButton.checked === true) {
+			console.log(radioButton);
+			var compareProjectFunction = compareProjectFunctions[i];
+			projectsOnScreen.sort(compareProjectFunction);
+		}
+	}
+
+	displayProjects();
+}
+
+function displayProjects() {
+	/* displays the projects on screen located in projectsOnScreen */
 	// generate project buttons
 	var projectButtonsHTML = "";
 	var projectButtonClass = "project-button";
 	projectsOnScreen.forEach(function(project) {
 		// Display project
-		var buttonText = capitalizeFirstLetter(project.name);
+		var buttonText = capitalizeFirstLetters(project.name);
 		var buttonLink = project.permalink;
 		var projectButtonHTML = createProjectButton(buttonText,buttonLink, projectButtonClass);
-		console.log(projectButtonHTML);
 		projectButtonsHTML += projectButtonHTML;
 	});
 
@@ -133,19 +163,37 @@ function filterProjects() {
 	// display projects on screen with matching tags
 	var projectButtonsDiv = document.querySelector(".project-list");
 	projectButtonsDiv.innerHTML = projectButtonsHTML;	
-
 }
 
-function sortProjects() {
-	/* Sorts projects on screen based on which radio button is checked */
+
+
+
+function compareProjectAlphabetical(a, b) {
+	/* Compares projects based on name alphabetically */
+	var comparison = b.name > a.name;
+	// console.log("b: " + b.name + ", a: " + a.name);
+	// console.log(comparison);
+	return comparison;
 }
 
+function compareProjectProjectType(a, b) {
+	/* Compares projects based on project type alphabetically */
+	return b.tags[0] > a.tags[0];
+}
+
+function compareProjectDate(a, b) {
+	/* Compares projects based on project date completion */
+	var comparison = b.date > a.date;
+	console.log("b: " + b.date + ", a: " + a.date);
+	console.log(comparison);
+	return comparison;
+}
 
 function createProjectButton(buttonText, buttonLink, buttonClass) {
 	/* Returns the html for a project button */
-	var projectButton = '<button type="button" class="btn btn-outline-dark ' + buttonClass + '"><a href="' + buttonLink + '">' + buttonText + '</a></button>';
+	var buttonLinkWrapped = "'" + buttonLink + "'";
+	var projectButton = '<button type=\"button\" class=\"btn btn-outline-dark ' + buttonClass + '\" onclick=\"window.location.href=\'' + buttonLink + '\';\">' + buttonText + '</button>';
 	return projectButton;
-
 }
 
 
@@ -156,11 +204,11 @@ function createProjectButton(buttonText, buttonLink, buttonClass) {
  * @param {array} arr the array providing items to check for in the haystack.
  * @return {boolean} true|false if haystack contains at least one item from arr.
  */
-var isCommonArrayElement = function (haystack, arr) {
-    return arr.some(function (v) {
-        return haystack.indexOf(v) >= 0;
-    });
-};
+ var isCommonArrayElement = function (haystack, arr) {
+ 	return arr.some(function (v) {
+ 		return haystack.indexOf(v) >= 0;
+ 	});
+ };
 
 
 
@@ -173,7 +221,7 @@ var isCommonArrayElement = function (haystack, arr) {
 
 
 
-function createRadio(radioID, name, radioText, className="") {
+function createRadio(radioID, name, radioText, className) {
 	var radioButton = '<div class="' + className + '">\
 	<input type="radio" id="' + radioID  + '" name="' + name  + '" value="' + radioID  + '"><label for="' + radioID  + '">' + radioText  + '</label><br>\
 	</div>';
@@ -190,7 +238,7 @@ function sortByFrequency(arrayToSort) {
 	Returns:
 	(array): a sorted unique element array based on the frequency
 			of elements contained in arrayToSort
-	*/
+			*/
 
 
 	/* Create frequency map of the arrayToSort */
@@ -255,14 +303,14 @@ function generateCheckboxID(tagName) {
 	return projectType;
 }
 
-function createCheckbox(checkboxID, tagName, className="") {
+function createCheckbox(checkboxID, tagName, className) {
 	/* Creates checkbox for project types */
 	var checkboxHTML = '\
 	<div class="' + className + '">\
 	<input type="checkbox" id="' + checkboxID  + '" name="project-type" value="' + checkboxID  + '">\
-	<label for="' + checkboxID  + '">' + capitalizeFirstLetter(tagName)  + '</label>\
+	<label for="' + checkboxID  + '">' + capitalizeFirstLetters(tagName)  + '</label>\
 	</div>\
-	'
+	';
 	return checkboxHTML;
 }
 
@@ -273,7 +321,7 @@ function replaceDeliminator(words,oldDeliminator,newDeliminator) {
 	for (var i=1; i<wordsArray.length; i++) {
 		newString += newDeliminator + wordsArray[i];
 	}
-	return newString
+	return newString;
 }
 
 function replaceSpacesWithHyphens(words) {
@@ -282,11 +330,22 @@ function replaceSpacesWithHyphens(words) {
 }
 
 function capitalizeFirstLetter(wordString) {
-	/* Capitalizes the first letter of a string of words */
+	/* Capitalizes the first letter of a string of of a single word */
 	var newString = wordString[0].toUpperCase() + wordString.substring(1);
 	return newString;
 }
 
+function capitalizeFirstLetters(wordString) {
+	/* Capitalizes the first letter of a string of words */
+	var wordArray = wordString.split(" ");
+	for (var i=0; i<wordArray.length; i++) {
+		var word = wordArray[i];
+		var capitalWord = capitalizeFirstLetter(word);
+		wordArray[i] = capitalWord;
+	}
+	var capitalWords = wordArray.join(" ");
+	return capitalWords;
+}
 
 
 
