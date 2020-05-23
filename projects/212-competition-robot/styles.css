@@ -1,0 +1,69 @@
+
+
+.long-divider {
+	border-top: 3px solid black;
+	width: 80%;
+	min-width: 276px;
+	margin: 0 auto;
+}
+
+
+.medium-divider {
+	border-top: 3px solid black;
+	width: 40%;
+	min-width: 276px;
+	margin: 0 auto;
+}
+
+.content-align-rule {
+	text-align: left;
+}
+
+/* more specific content alignment */
+.content-align-rule .long-divider, .content-align-rule .medium-divider {
+	margin-left: 0;
+}
+
+@media only screen and (max-width:768px) { /* Medium Screen Size Changes */
+	.content-align-rule {
+		text-align: center;
+	}
+
+		/* more specific content alignment */
+	.content-align-rule .long-divider, .content-align-rule .medium-divider {
+		margin: 0 auto;
+	}
+}
+
+/*.center {
+	text-align: center;
+}*/
+
+#extra-space {
+	padding: 1rem;
+}
+
+.responsive-feature-image {
+	width: 100%;
+	max-width: 500px;
+	border-radius: 5%;
+}
+
+
+
+/* for responsive videos */
+.fitVids-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.fitVids-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 560px;
+  max-height: 315px;
+}
+

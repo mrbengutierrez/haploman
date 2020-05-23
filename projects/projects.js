@@ -49,6 +49,10 @@ function main() {
 		}
 	}
 
+	// BYPASS TAG SORTING
+	// uncomment to get normal top numberOfTags
+	remainingTags = ["software engineering", "electrical engineering", "mechanical engineering"];
+
 	// Create ids for checkboxes
 	remainingTags.forEach(function(tagName) {
 		var checkboxID = generateCheckboxID(tagName);
@@ -93,7 +97,7 @@ function main() {
 	radioDiv.innerHTML = radiosHTML;	
 
 	// select radio button
-	document.getElementById("althabetical-sort").checked = true;
+	document.getElementById("date-sort").checked = true;
 
 	// add event listeners to radio buttons
 	radioIDs.forEach(function(radioID) {
@@ -170,23 +174,36 @@ function displayProjects() {
 
 function compareProjectAlphabetical(a, b) {
 	/* Compares projects based on name alphabetically */
-	var comparison = b.name > a.name;
-	// console.log("b: " + b.name + ", a: " + a.name);
-	// console.log(comparison);
-	return comparison;
+	var firstValue = b.name;
+	var secondValue = a.name;
+	return compareStrings(firstValue, secondValue);
 }
 
 function compareProjectProjectType(a, b) {
 	/* Compares projects based on project type alphabetically */
-	return b.tags[0] > a.tags[0];
+	var firstValue = a.tags[0];
+	var secondValue = b.tags[0];
+	return compareStrings(firstValue, secondValue);
 }
 
 function compareProjectDate(a, b) {
 	/* Compares projects based on project date completion */
-	var comparison = b.date > a.date;
-	console.log("b: " + b.date + ", a: " + a.date);
-	console.log(comparison);
-	return comparison;
+	var firstValue = a.date;
+	var secondValue = b.date;
+	return compareStrings(firstValue, secondValue);
+}
+
+function compareStrings(firstValue,secondValue) {
+	/* Compares strings. Returns 0 if equal, 1 if secondValue greater, else -1 */
+	if (secondValue === firstValue) {
+		return 0;
+	}
+
+	var comparison = secondValue > firstValue;
+	if (comparison === true) {
+		return 1;
+	}
+	return -1;	
 }
 
 function createProjectButton(buttonText, buttonLink, buttonClass) {
