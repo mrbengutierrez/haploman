@@ -1,74 +1,79 @@
-
-
-
+<!DOCTYPE html>
 <html>
+<head>
+	<title></title>
+
+	<!-- Shared Head -->
+	<script type="text/javascript" src="../../shared-resources/shared-head.js"></script>
+
+	<!-- Project Styling -->
+	<link rel="stylesheet" type="text/css" href="../projects-styles.css">
+
+
+	
+</head>
+<body>
+	<!--  Navigation Bar -->
+	<script type="text/javascript" src="../../shared-resources/shared-navigation.js"></script>
+
+	<div class="section section-yin">
+		<h1 class="extra-large-heading top-heading"></h1>
+	</div>
+
+
+	<div class="section section-yang content-align-rule">
+
+		<h2 class="increment-2-heading project-date"></h2>
+
+		<h2 class="increment-3-heading">Brief Description</h2>
+		<hr class="medium-divider">
+		<div id=extra-space></div>
+
+	<p>
+		My controller had three parts to it. A three phase bridge amplifier, a digital logic circuit, and two oscillator circuits. Since the induction motor was a three phase motor I used a three phase bridge to amplify the current entering the windings of the motor. The three phase bridge utilized six IR540 MOSFETs. This MOSFET was chosen because it was able to handle a continuous drain current of 20 A, with only a 72 nC total gate charge, and a 0.077 <span>&#8486;</span> R<sub>DS(ON)</sub> value.
+	</p>
+
+	<p>
+		In an induction motor, the AC power supplied to the motor's stator creates a magnetic field that rotates synchronously with the AC oscillations. However, the rotor rotates at a somewhat slower speed than the stator field. The induction motor stator's magnetic field is therefore changing or rotating relative to the rotor.
+	</p>
+
+	<p>
+		The motor controller utilized an approximated sinewave to control the motor. The digital logic circuit was responsable for switching the MOSFETS of the three phase bridge in order to generate these approximated sinewaves. There were six states of the approximated sinewave cycle. Since rotor rotates slower than the stator's magnetic field, the controller switched states open loop.
+	</p>
+
+	<p>
+		The motor controller had two potentiometers: the first to control frequency and the second to control duty cycle. The first potentiometer would directly increase the frequency of the approximated sinewave. To accomplish this, I used a variable frequency oscillation circuit. The frequency range that the circuit need to change states was between 100Hz to 400Hz.
+	</p>
+
+	<p>
+		The second potentiometer controlled the duty cycle of the approximated sinewave. To accomplish this, a variable duty cycle circuit was used. The frequency that this oscillator operated was at 20kHz. The duty cycle range was specified to be between 0% to 80%.
+	</p>
 
 
 
 
-<h1 class="center"><strong>Induction Motor Controller</strong></h1>
 
 
-<br />
+	<div id=extra-space></div>
 
-<h2 class="center">Brief Description</h2>
-<hr class="divider">
-<div id=extra-space></div>
-
-<p>In an induction motor, the AC power supplied to the motor's stator creates a magnetic field that rotates synchronously with the AC oscillations. However, the rotor rotates at a somewhat slower speed than the stator field. The induction motor stator's magnetic field is therefore changing or rotating relative to the rotor.</p>
-
-<p>
-	My controller had three parts to it. A three phase bridge amplifier, a digital logic circuit, and two oscillator circuits. Since the induction motor was a three phase motor I used a three phase bridge to amplify the current entering the windings of the motor. The three phase bridge utilized six IR540 MOSFETs. This MOSFET was chosen because it was able to handle a continuous drain current of 20 A, with only a 72 nC total gate charge, and a 0.077 <span>&#8486;</span> R<sub>DS(ON)</sub> value.
-</p>
-
-<p>The motor controller utilized an approximated sinewave to control the motor. The digital logic circuit was responsable for switching the MOSFETS of the three phase bridge in order to generate these approximated sinewaves. There were six states of the approximated sinewave cycle. Since rotor rotates slower than the stator's magnetic field, the controller switched states open loop.
-</p>
-
-<p>The motor controller had two potentiometers: the first to control frequency and the second to control duty cycle. The first potentiometer would directly increase the frequency of the approximated sinewave. To accomplish this, I used a variable frequency oscillation circuit. The frequency range that the circuit need to change states was between 100Hz to 400Hz.</p>
-
-<p> The second potentiometer controlled the duty cycle of the approximated sinewave. To accomplish this, a variable duty cycle circuit was used. The frequency that this oscillator operated was at 20kHz. The duty cycle range was specified to be between 0% to 80%.
-</p>
+	<div class="center embed-responsive embed-responsive-16by9">
+	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/gqFEMWsK6IE" allowfullscreen></iframe>
+	</div>
 
 
 
 
 
-
-<div id=extra-space></div>
-
-<div class="center">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/gqFEMWsK6IE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+	</div>
 
 
 
-
-
-
-<style>
-	.center {
-		vertical-align: center;
-		text-align: center;
-		width: 100%;
-	}
-
-	p, li, h1, h2, h3, h4, h5, h6 {
-		color: black;
-	}
-
-	/* Solid border */
-	hr.divider {
-		border-top: 3px solid black;
-		width: 30%;
-		vertical-align: middle;
-		margin: 0 auto;
-	}
-
-	#extra-space {
-		padding: 1em;
-	}
-</style>
-
-
-
+	<!-- Shared Footer -->
+	<script type="text/javascript" src="../../shared-resources/shared-footer.js"></script>
+	<script type="text/javascript" src="../projects-data.json"></script>
+	<script type="text/javascript" src="../projects-script.js"></script>
+</body>
 </html>
+
+
+
