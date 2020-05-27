@@ -35,9 +35,9 @@ function getProjectFromCurrentURL(projectArray) {
   var splittedURL = currentURL.split("/");
   console.log("splittedURL: ");
   console.log(splittedURL);
-  var permalink = splittedURL[splittedURL.length-1];
+  var permalink = splittedURL[splittedURL.length-2];
   if (permalink === "index.html" || permalink === "") {
-    permalink = splittedURL[splittedURL.length-2];
+    permalink = splittedURL[splittedURL.length-3];
   }
 
   for (var i=0; i<projectArray.length; i++) {
