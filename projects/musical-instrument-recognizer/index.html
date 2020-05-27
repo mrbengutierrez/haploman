@@ -1,43 +1,69 @@
+
+<!DOCTYPE html>
 <html>
+<head>
+  <title></title>
+
+  <!-- Shared Head -->
+  <script type="text/javascript" src="../../shared-resources/shared-head.js"></script>
+
+  <!-- Project Styling -->
+  <link rel="stylesheet" type="text/css" href="../projects-styles.css">
+
+  <!-- Custom Page Styling -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  
+</head>
+<body>
+  <!--  Navigation Bar -->
+  <script type="text/javascript" src="../../shared-resources/shared-navigation.js"></script>
+
+  <div class="section section-yin">
+    <h1 class="extra-large-heading top-heading"></h1>
+  </div>
 
 
-<h1 class="center">Musical Instrument Recognizer</h1>
+  <div class="section content-align-rule">
 
-<div id=extra-space></div>
+    <h2 class="increment-2-heading project-date"></h2>
 
+    <h2 class="increment-3-heading">Brief Description</h2>
+    <hr class="medium-divider">
+    <div id=extra-space></div>
 
-<p class="center">The source code for this project is located in <a href="https://github.com/mrbengutierrez/Musical-Instrument-Recognizer" target="_blank">this repository</a>
+<p>The source code for this project is located in <a href="https://github.com/mrbengutierrez/Musical-Instrument-Recognizer" target="_blank">this repository</a>
 
 <h2>Table of Contents</h2>
   <ol>
-	<li><a href="#code"><b>Code</b></a></li>
-	<li><a href="#abstract"><b>Abstract</b></a></li>
-	<li><a href="#introduction"><b>Introduction</b></a></li>
-	<li><a href="#methods"><b>Methods</b></a>
-	  <ul>
-	    <li><a href="#dataset"><b>Dataset</b></a></li>
-		<li><a href="#preprocessing 1"><b>Preprocessing</b></a></li>
-		<li><a href="#neural network"><b>Neural Network</b></a></li>
-	  </ul>
-	</li>
-	<li><a href="#experiments"><b>Experiments and Results</b></a>
-	  <ul>
-	    <li><a href="#preprocessing 2"><b>Preprocessing</b></a></li>
-		<li><a href="#instrument number"><b>Number of Instruments</b></a></li>
-		<li><a href="#pitch"><b>Pitch Training and Testing</b></a></li>
-	  </ul>
-	</li>
-	</li>
-	<li><a href="#conclusion"><b>Conclusion</b></a>
-	  <ul>
-	    <li><a href="#contributors"><b>Contributors</b></a></li>
-	    <li><a href="#acknowledgments"><b>Acknowledgments</b></a></li>
-		<li><a href="#references"><b>References</b></a></li>
-	  </ul>
-	</li>
+  <li><a href="#code"><b>Code</b></a></li>
+  <li><a href="#abstract"><b>Abstract</b></a></li>
+  <li><a href="#introduction"><b>Introduction</b></a></li>
+  <li><a href="#methods"><b>Methods</b></a>
+    <ul>
+      <li><a href="#dataset"><b>Dataset</b></a></li>
+    <li><a href="#preprocessing 1"><b>Preprocessing</b></a></li>
+    <li><a href="#neural-network"><b>Neural Network</b></a></li>
+    </ul>
+  </li>
+  <li><a href="#experiments"><b>Experiments and Results</b></a>
+    <ul>
+      <li><a href="#preprocessing 2"><b>Preprocessing</b></a></li>
+    <li><a href="#instrument-number"><b>Number of Instruments</b></a></li>
+    <li><a href="#pitch"><b>Pitch Training and Testing</b></a></li>
+    </ul>
+  </li>
+  </li>
+  <li><a href="#conclusion"><b>Conclusion</b></a>
+    <ul>
+      <li><a href="#contributors"><b>Contributors</b></a></li>
+      <li><a href="#acknowledgments"><b>Acknowledgments</b></a></li>
+    <li><a href="#references"><b>References</b></a></li>
+    </ul>
+  </li>
   </ol>
  
-<h2 id="code">Code</h2>
+<h2 id="code" class="increment-3-heading">Code</h2>
   <p>
     Please open api.py located in the <a href="https://github.com/mrbengutierrez/Musical-Instrument-Recognizer" target="_blank">project repository</a> to see the Application Program Interface for the Musical Instrument Recognition software. Please look at the demos in the main function in api.py to learn how to use the code. The demos will be replicated below.
   </p>
@@ -90,13 +116,13 @@
   <img src="https://raw.githubusercontent.com/mrbengutierrez/musical-instrument-recognizer/master/images/79_10instr_sigmoid.png" alt="10 Instruments Testing">
   <img src="https://raw.githubusercontent.com/mrbengutierrez/musical-instrument-recognizer/master/images/80_10instr_sigmoid.png" alt="10 Instruments Testing">
   
-<h2 id="abstract">Abstract</h2>
+<h2 id="abstract" class="increment-3-heading">Abstract</h2>
   <p>
   Neural Networks have been applied to a multitude of testing scenarios. The goal here was to use audio samples from various instruments to train neural networks to identify both the instrument and pitch of a given audio sample. The intent was to use these developed neural networks to create a tool that could combine both pitch and instrument information to help users create sheet music, by instrument, from a given audio file. The audio data was preprocessed using log based Fast Fourier Transform and Mel Frequency Cepstral Coefficients to underscore the features necessary to train the neural network without loss of important audio characteristics.
   </p>
   
 
-<h2 id="introduction">Introduction</h2>
+<h2 id="introduction" class="increment-3-heading">Introduction</h2>
   <p>
   Every instrument has its own special characteristics defined by its shape, size, length of its strings, tuning, age, quality, etc. Underneath all these factors, the sound of an instrument is defined by its frequencies and resonances. Recognizing these patterns in frequencies and resonances is difficult for humans but an analysis of this data can allow a neural network to recognize and categorize this data.  What humans do excel at is the the ability to identify the difference between a cheap or expensive instrument while still recognizing that they are in fact the same instrument. Every instrument has a unique frequency pattern that defines it and can be used to identify it regardless of most of those other factors. In addition, musical pitches also have consistent patterns from instrument to instrument that can be identified. The goal is to train a neural network to identify instruments while ignoring all the other extraneous factors regarding the particular instrument itself including pitch. Fast Fourier Transform (FFT) and Mel Frequency Cepstral Coefficients (MFCC) were used to create frequency data plots to train the neural networks. Various levels of testing was performed to understand the importance of training iterations, sample sizes, and over-fitting. All the data was obtained from Philharmonia Orchestra Sound Samples because the data was simple, consistent, and reliable. This limited the number of extraneous factors in our testing while providing us with consistent, high quality data with large sample sizes for most instruments. 
   </p>
@@ -105,7 +131,7 @@
   The FFT and MFCC break down our processed audio samples in two ways. FFT gives us the frequencies for each sample and treats them as if they are periodic throughout the sample and MFCC gives us coefficients for a spectrogram to see frequency data over time. These combined, provide us with enough data to create input vectors for our neural network to train and identify instruments. The same processing methods can be used to process audio for pitch identification while ignoring octaves.
   </p>
 
-<h2 id="methods">Methods</h2>
+<h2 id="methods" class="increment-3-heading">Methods</h2>
   <p>
   This section will discuss the data set we obtained, the preprocessing process, and the neural network we implemented. 
   </p>
@@ -117,32 +143,32 @@
   
   <ul>
     <li>banjo (74 samples)</li>
-	<li>bass clarinet (945 samples)</li>
-	<li>bassoon (721 samples)</li>
-	<li>cello (889 samples)</li>
-	<li>clarinet (847 samples)</li>
-	<li>contrabassoon (711 samples)</li>
-	<li>cor anglais (682 samples)</li>
-	<li>double bass (853 samples)</li>
-	<li>flute (879 samples)</li>
-	<li>french horn (651 samples)</li>
-	<li>guitar (107 samples)</li>
-	<li>mandolin (81 samples)</li>
-	<li>oboe (597 samples)</li>
-	<li>percussion (149 samples)</li>
-	<li>saxophone (732 samples)</li>
-	<li>trombone (832 samples)</li>
-	<li>trumpet (486 samples)</li>
-	<li>tuba (973 samples)</li>
-	<li>viola (974 samples)</li>
-	<li>violin (1502 samples)</li>
+  <li>bass clarinet (945 samples)</li>
+  <li>bassoon (721 samples)</li>
+  <li>cello (889 samples)</li>
+  <li>clarinet (847 samples)</li>
+  <li>contrabassoon (711 samples)</li>
+  <li>cor anglais (682 samples)</li>
+  <li>double bass (853 samples)</li>
+  <li>flute (879 samples)</li>
+  <li>french horn (651 samples)</li>
+  <li>guitar (107 samples)</li>
+  <li>mandolin (81 samples)</li>
+  <li>oboe (597 samples)</li>
+  <li>percussion (149 samples)</li>
+  <li>saxophone (732 samples)</li>
+  <li>trombone (832 samples)</li>
+  <li>trumpet (486 samples)</li>
+  <li>tuba (973 samples)</li>
+  <li>viola (974 samples)</li>
+  <li>violin (1502 samples)</li>
   </ul>
   
   <p>
   The samples were initially mp3 files, but we decompressed them into wav files using a mp3 to wav converter. We then labeled all of our data by putting them into their respective folder. 
   </p>
 
-<h3 id="preprocessing 1">Preprocessing</h3>
+<h3 id="preprocessing 1" class="increment-3-heading">Preprocessing</h3>
 <h4>Method 1: FFT Approach</h4>
   <p>
   In order to tackle the problem of instrument recognition, we tried a frequency based approach. We took samples of audio data sampled at 44,100 Hz. We then down-sampled the signals in the time domain by a factor of 4, which in turn lowered our sample rate by a factor of 4. In addition, down-sampling has the effect of mapping higher frequencies to lower frequencies and can cause distortion. One way to prevent this distortion is to add a low pass filter with the cutoff frequency at the new sampling rate. We did not add a low pass filter because the power of our signals at high frequencies was quite small. Next we extracted 2048 sample points in the center of our signal. Then we took the fast-frequency transform (FFT) of the shrunken signal. This gave us the frequency content of our signal. We then removed the left hand side of the FFT. The FFT breaks down the signal into complex components and produces both negative and positive frequency components. Because our signal is real the negative frequency components are redundant. After we removed the left hand side of the FFT, we took the log of the each of the FFT frequencies. This is based on the idea of human hearing, as humans tend to associate exponential changes as linear ones. Finally in order to regularize our data, we divided each frequency component by the maximum amplitude in the frequency spectrum.
@@ -208,7 +234,7 @@
   The final step of pre-processing was to normalize and regularize the MFCCs. Regularization was accomplished by subtracting the mean of MFCCS for each time row. Normalization was accomplished by dividing the MFCCS by the max coefficient for each time row. By normalizing our data we insured that our inputs into our neural network would be in the range between [-1:1].
   </p>
 
-<h3 id="https://raw.githubusercontent.com/mrbengutierrez/musical-instrument-recognizer/master/neural network">Neural Network</h3>
+<h3 id="neural-network" class="increment-3-heading">Neural Network</h3>
   <p>
   We used a fully connected artificial neural net (ANN) as our choice of machine learning algorithm. We chose to use an ANN because of its popularity in image classification problems. An image can be thought of as a two-dimensional signal, which is similar to the concept of MFCCS with both time and frequency labels for each coefficient. 
   </p>
@@ -239,12 +265,12 @@
   
   <p>
     <i>J</i>: Cost of weight matrix <i>theta</i><br>
-	<i>y[i]</i>: Target values of layer <i>i</i><br>
-	<i>a[i]</i>: Activation values of layer <i>i</i>
+  <i>y[i]</i>: Target values of layer <i>i</i><br>
+  <i>a[i]</i>: Activation values of layer <i>i</i>
   </p>
      
   
-<h2 id="experiments">Experiments and Results</h2>
+<h2 id="experiments" class="increment-3-heading">Experiments and Results</h2>
   <p>
   In this section, we will discuss how our process evolved throughout this project and the results obtained at each step. 
   </p>
@@ -274,7 +300,7 @@
 
   <img src="https://raw.githubusercontent.com/mrbengutierrez/musical-instrument-recognizer/master/images/72_accuracy_2.png" alt="MFCC Accuracy">
   
-<h3 id="instrument number">Increasing the Number of Instruments</h3> 
+<h3 id="instrument-number">Increasing the Number of Instruments</h3> 
   <p>
   After changing our preprocessing method, we tried training and testing with an increased number of instruments from 3 instruments (cello, flute, saxophone) to 5 instruments (cello, clarinet, banjo, flute, saxophone). Unfortunately we obtained a lower training accuracy of 81.3% and a testing accuracy of 62%. 
   </p>
@@ -289,38 +315,38 @@
   
   <table>
     <tr>
-	  <td>Intervals</td>
-	  <td>Training Accuracy</td>
-	  <td>Testing Accuracy</td>
-	</tr>
+    <td>Intervals</td>
+    <td>Training Accuracy</td>
+    <td>Testing Accuracy</td>
+  </tr>
     <tr>
-	  <td>20</td>
-	  <td>68.8%</td>
-	  <td>60%</td>
-	</tr>
+    <td>20</td>
+    <td>68.8%</td>
+    <td>60%</td>
+  </tr>
     <tr>
-	  <td>40</td>
-	  <td>77.6%</td>
-	  <td>70%</td>
-	</tr>
-	  <td>45</td>
-	  <td>76.4%</td>
-	  <td>70%</td>
+    <td>40</td>
+    <td>77.6%</td>
+    <td>70%</td>
+  </tr>
+    <td>45</td>
+    <td>76.4%</td>
+    <td>70%</td>
     <tr>
-	  <td>50</td>
-	  <td>78.5%</td>
-	  <td>78%</td>
-	</tr>
+    <td>50</td>
+    <td>78.5%</td>
+    <td>78%</td>
+  </tr>
     <tr>
-	  <td>55</td>
-	  <td>78.4%</td>
-	  <td>76%</td>
-	</tr>
+    <td>55</td>
+    <td>78.4%</td>
+    <td>76%</td>
+  </tr>
     <tr>
-	  <td>100</td>
-	  <td>81.3%</td>
-	  <td>62%</td>
-    </tr>	
+    <td>100</td>
+    <td>81.3%</td>
+    <td>62%</td>
+    </tr> 
   </table>
 
 <h3 id="sample size">Increasing Sample Size</h3>   
@@ -351,28 +377,28 @@
   
   <img src="https://raw.githubusercontent.com/mrbengutierrez/musical-instrument-recognizer/master/images/45_3note_BCF_accuracy.png" alt="Three Notes Accuracy">
 
-<h2 id="conclusion">Conclusion</h2>  
+<h2 id="conclusion" class="increment-3-heading">Conclusion</h2>  
   <p>
   Overall, we saw that the preprocessing step, the number of instruments, and the sample size affected our accuracy. Since we were dealing with audio, preprocessing was essential to our project. We saw that changing our methods from only taking the Fast Fourier Transform to taking the Fast Fourier Transform and the Mel-Frequency Cepstral Coefficient drastically improved our results. Also when increasing the number of instruments, we came across the problem of overfitting and the importance of sample size. To further our study, we would want to try to train and test the pitch and the duration of each note to eventually generate a score, from a given audio file, by overlaying the results obtained from both neural networks.
   </p>
 
-<h3 id="contributors">Contributors</h3>
+<h3 id="contributors" class="increment-3-heading">Contributors</h3>
 <i><strong>AKA The Instrumental Specialists</strong> </i>
   
 <h4><strong>Ben Gutierrez</strong></h4>
 <i>Massachusetts Institute of Technology</i>
   <ul>   
     <li>Wrote the project code, including:
-	  <ul>
-	    <li>preprocess.py</li>
-		<li>neuralnet.py</li>
-		<li>note_sorter.py</li>
-		<li>api.py</li>
+    <ul>
+      <li>preprocess.py</li>
+    <li>neuralnet.py</li>
+    <li>note_sorter.py</li>
+    <li>api.py</li>
   </ul>
     </li>
-	<li>Talked about preprocessing in final presentation</li>
-	<li>Wrote about preprocessing and neural network in final paper</li>
-	<li>Maintains the repository project for future updates</li>
+  <li>Talked about preprocessing in final presentation</li>
+  <li>Wrote about preprocessing and neural network in final paper</li>
+  <li>Maintains the repository project for future updates</li>
   </ul>
   
 <h4><strong>Ellen Mak</strong></h4>
@@ -380,96 +406,75 @@
   <ul>
     <li>Contributed substantially to final presentation
       <ul>
-	    <li>Talked about training and testing</li>
-	    <li>Wrote down answers to class questions</li>
-	    <li>Wrote the PowerPoint talking notes</li>
-	   </ul>
+      <li>Talked about training and testing</li>
+      <li>Wrote down answers to class questions</li>
+      <li>Wrote the PowerPoint talking notes</li>
+     </ul>
     </li>
     <li>Trained and tested instrumental data
-	  <ul>
-	    <li>Tuned neural network parameters to get a good model for the data</li>
+    <ul>
+      <li>Tuned neural network parameters to get a good model for the data</li>
         <li>Generated plots of models of interest</li>
-	  </ul>
-	</li>
-	<li>Wrote about experiments,results, and conclusion in the final paper
-	  <ul>
-	    <li>Also formatted all plots, reference, and style in latex NIPS format</li>
+    </ul>
+  </li>
+  <li>Wrote about experiments,results, and conclusion in the final paper
+    <ul>
+      <li>Also formatted all plots, reference, and style in latex NIPS format</li>
       </ul>
-	</li>
+  </li>
   </ul>
-	
+  
 <h4><strong>Rohan Pahwa</strong></h4>
 <i>Boston College</i>
   <ul>
     <li>Contributed to final presentation
-	  <ul>
-	    <li>Talked about overall process, dataset, and introduction</li>
-	  </ul>
-	</li>
+    <ul>
+      <li>Talked about overall process, dataset, and introduction</li>
+    </ul>
+  </li>
     <li>Wrote introduction and abstract for final paper</li>
-	<li>Trained and tested notes data
-	  <ul>
-	    <li>Tuned neural network parameters to get a good model for the data</li>
-		<li>Generated plots of models of interest</li>
+  <li>Trained and tested notes data
+    <ul>
+      <li>Tuned neural network parameters to get a good model for the data</li>
+    <li>Generated plots of models of interest</li>
       </ul>
-	</li>
+  </li>
   </ul>  
   
-<h3 id="acknowledgments">Acknowledgments</h3>
+<h3 id="acknowledgments" class="increment-3-heading">Acknowledgments</h3>
   <p>
     This work was done for the Machine Learning course (CS542) at Boston University.
   </p>
 
-<h3 id="references">References</h3>  
+<h3 id="references" class="increment-3-heading">References</h3>  
   <ol>
     <li><p>
-	Fayek, Haytham. <q>Speech Processing for Machine Learning: Filter Banks, Mel-Frequency Cepstral Coefficients (MFCCs) and What's In-Between.</q> <i>Speech Processing for Machine Learning: Filter Banks, Mel-Frequency Cepstral Coefficients (MFCCs) and What's In-Between</i>, Haytham Fayek, 21 Apr. 2016, haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html.
-	</p></li>
+  Fayek, Haytham. <q>Speech Processing for Machine Learning: Filter Banks, Mel-Frequency Cepstral Coefficients (MFCCs) and What's In-Between.</q> <i>Speech Processing for Machine Learning: Filter Banks, Mel-Frequency Cepstral Coefficients (MFCCs) and What's In-Between</i>, Haytham Fayek, 21 Apr. 2016, haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html.
+  </p></li>
     <li><p>
-	Han, Yoonchang, et al. <q>Deep Convolutional Neural Networks for Predominant Instrument Recognition in Polyphonic Music</q>. <i>IEEE/ACM Transactions on Audio, Speech, and Language Processing</i>, vol. 25, no. 1, 2017, pp. 208 to 221., doi:10.1109/taslp.2016.2632307.
-	</p></li>
-	<li><p>
-	Mitra, Vikramjit, et al. <q>Robust Features in Deep-Learning-Based Speech Recognition.</q> <i>New Era for Robust Speech Recognition</i>, 2017, pp. 187 to 217., doi:10.1007/978-3-319-64680-0_8.
-	</p></li>
-	<li><p>
-	Yoshioka, T., and M.j.f. Gales. <q>Environmentally Robust ASR Front-End for Deep Neural Network Acoustic Models.</q> <i>Computer Speech & Language</i>, vol. 31, no. 1, 2014, pp. 65 to 86., doi:10.1016/j.csl.2014.11.008.
-	</p></li>
+  Han, Yoonchang, et al. <q>Deep Convolutional Neural Networks for Predominant Instrument Recognition in Polyphonic Music</q>. <i>IEEE/ACM Transactions on Audio, Speech, and Language Processing</i>, vol. 25, no. 1, 2017, pp. 208 to 221., doi:10.1109/taslp.2016.2632307.
+  </p></li>
+  <li><p>
+  Mitra, Vikramjit, et al. <q>Robust Features in Deep-Learning-Based Speech Recognition.</q> <i>New Era for Robust Speech Recognition</i>, 2017, pp. 187 to 217., doi:10.1007/978-3-319-64680-0_8.
+  </p></li>
+  <li><p>
+  Yoshioka, T., and M.j.f. Gales. <q>Environmentally Robust ASR Front-End for Deep Neural Network Acoustic Models.</q> <i>Computer Speech & Language</i>, vol. 31, no. 1, 2014, pp. 65 to 86., doi:10.1016/j.csl.2014.11.008.
+  </p></li>
   </ol>
-  
-
-  
-
-  
 
 
 
-<style>
-	.center {
-		vertical-align: center;
-		text-align: center;
-		width: 100%;
-	}
-
-	p, li, h1, h2, h3, h4, h5, h6 {
-		color: black;
-	}
-
-	/* Solid border */
-	hr.divider {
-		border-top: 3px solid black;
-		width: 30%;
-		vertical-align: middle;
-		margin: 0 auto;
-	}
-
-	#extra-space {
-		padding: 1em;
-	}
-
-	img { display:block; } 
-</style>
+  </div>
 
 
 
-
+  <!-- Shared Footer -->
+  <script type="text/javascript" src="../../shared-resources/shared-footer.js"></script>
+  <script type="text/javascript" src="../projects-data.json"></script>
+  <script type="text/javascript" src="../projects-script.js"></script>
+</body>
 </html>
+
+
+
+
