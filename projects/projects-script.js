@@ -33,6 +33,8 @@ function getProjectFromCurrentURL(projectArray) {
   // Returns the project based on the current url
   var currentURL = window.location.href;
   var splittedURL = currentURL.split("/");
+  console.log("splittedURL: ");
+  console.log(splittedURL);
   var permalink = splittedURL[splittedURL.length-1];
   if (permalink === "index.html") {
     permalink = splittedURL[splittedURL.length-2];
