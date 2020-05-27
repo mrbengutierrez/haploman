@@ -13,10 +13,10 @@ var html = '\
     <div class="collapse navbar-collapse" id="navbarToggler_01">\
       <ul class="navbar-nav ml-auto">\
         <li class="nav-item">\
-          <a class="nav-link" href="https://www.haploman.com/education">Education</a>\
+          <a class="nav-link" href="https://www.haploman.com/education/">Education</a>\
         </li>\
         <li class="nav-item">\
-          <a class="nav-link" href="https://www.haploman.com/projects">Projects</a>\
+          <a class="nav-link" href="https://www.haploman.com/projects/">Projects</a>\
         </li>\
         <li class="nav-item">\
           <a class="nav-link" href="https://www.haploman.com/#contact">Contact</a>\
