@@ -1,45 +1,63 @@
 
-/*
- * extra small, .col-, <576px
- * small, .col-sm-, >=576px
- * medium, .col-md-, >=768px
- * large, .col-lg-, >=992px
- * extra large, .col-xl, >=1200px
- */
 
-body {
+.long-divider {
+	border-top: 3px solid black;
+	width: 80%;
+	min-width: 276px;
+	margin: 0 auto;
+}
+
+
+.medium-divider {
+	border-top: 3px solid black;
+	width: 40%;
+	min-width: 276px;
+	margin: 0 auto;
+}
+
+.content-align-rule {
 	text-align: left;
 }
 
+.center {
+	text-align: center;
+	vertical-align: center;
+}
+
+/* more specific content alignment */
+.content-align-rule .long-divider, .content-align-rule .medium-divider {
+	margin-left: 0;
+}
+
 @media only screen and (max-width:768px) { /* Medium Screen Size Changes */
-	body {
+	.content-align-rule {
 		text-align: center;
 	}
-}
 
-.top-heading {
-	text-align: center;
-}
-.project-type {
-	padding: 0%;
-	display: inline-block;
-	margin: 1%;
-}
+	.content-align-rule p {
+		text-align: left;
+	}
 
-.radio-button {
-	padding: 0%;
-	display: inline-block;
-	margin: 1%;
-}
-
-.project-button {
-	width: 50%;
-	height: 4rem;
-}
-
-@media only screen and (max-width:992px) { /* Slightly larger than Medium Screen Size Changes */
-	.project-button {
-		width: 100%;
+		/* more specific content alignment */
+	.content-align-rule .long-divider, .content-align-rule .medium-divider {
+		margin: 0 auto;
 	}
 }
+
+/*.center {
+	text-align: center;
+}*/
+
+#extra-space {
+	padding: 1rem;
+}
+
+.responsive-feature-image {
+	width: 100%;
+	max-width: 500px;
+	border-radius: 5%;
+}
+
+
+
 
