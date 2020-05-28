@@ -29,6 +29,7 @@ document.write(
  '<!-- Required meta tags -->\
  <meta charset="utf-8">\
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">\
+ <meta name="author" content="Benjamin Gutierrez">\
  \
  <!-- Favicon -->\
  <link rel="icon" href="https://drive.google.com/uc?export=view&id=11b0YtsxHhqw7KIzV239aschfVTan7It-">\
