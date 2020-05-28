@@ -43,3 +43,10 @@ body {
 	}
 }
 
+
+@media only screen and (max-width:360px) { /* Extra Small Size Changes */
+	.project-button {
+		height: 6rem;
+	}
+}
+

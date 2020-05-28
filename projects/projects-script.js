@@ -6,19 +6,19 @@ function main() {
   var currentProject = getProjectFromCurrentURL(projectArray);
 
   // Put current project name on screen
-  var topHeadingHTML = document.querySelector(".top-heading");
-  console.log("---");
-  console.log(currentProject);
-  console.log(topHeadingHTML);
-  var projectName = capitalizeFirstLetters(currentProject.name);
-  topHeadingHTML.innerHTML = projectName;
-  
+  // var topHeadingHTML = document.querySelector(".top-heading");
+  // console.log("---");
+  // console.log(currentProject);
+  // console.log(topHeadingHTML);
   // var projectName = capitalizeFirstLetters(currentProject.name);
-  // var projectNameHTMLs = document.querySelectorAll(".project-name");
-  // for (var i=0; i<projectNameHTMLs.length; i++) {
-  //   var projectNameHTML = projectNameHTMLs[i];
-  //   projectNameHTML.innerHTML = projectName;
-  // }
+  // topHeadingHTML.innerHTML = projectName;
+  
+  var projectName = capitalizeFirstLetters(currentProject.name);
+  var projectNameHTMLs = document.querySelectorAll(".project-name");
+  for (var i=0; i<projectNameHTMLs.length; i++) {
+    var projectNameHTML = projectNameHTMLs[i];
+    projectNameHTML.innerHTML = projectName;
+  }
 
 
   // Put project completion date on screen
