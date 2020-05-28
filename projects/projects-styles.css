@@ -59,5 +59,36 @@
 }
 
 
+/* Responsive Images with different max widths */
+.responsive-fluid-image-rounded-sm {
+	width: 100%;
+	border-radius: 5%;
+	max-width: 576px;
+}
+
+.responsive-fluid-image-rounded-md {
+	width: 100%;
+	border-radius: 5%;
+	max-width: 768px;
+}
+
+.responsive-fluid-image-rounded-lg {
+	width: 100%;
+	border-radius: 5%;
+	max-width: 992px;
+}
+
+.responsive-fluid-image-rounded-xl {
+	width: 100%;
+	border-radius: 5%;
+	max-width: 1200px;
+}
+
+.responsive-fluid-image-rounded {
+	width: 100%;
+	border-radius: 5%;
+}
+
+
 
 

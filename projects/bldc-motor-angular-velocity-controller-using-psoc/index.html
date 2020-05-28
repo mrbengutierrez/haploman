@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<!-- Shared Head -->
+	<script type="text/javascript" src="../../shared-resources/shared-head.js"></script>
+
+	<!-- Project Styling -->
+	<link rel="stylesheet" type="text/css" href="../projects-styles.css">
+
+
+	
+</head>
+<body>
+	<!--  Navigation Bar -->
+	<script type="text/javascript" src="../../shared-resources/shared-navigation.js"></script>
+
+	<div class="section section-yin">
+		<h1 class="extra-large-heading top-heading"></h1>
+	</div>
+
+
+	<div class="section section-yang content-align-rule">
+
+		<h2 class="increment-2-heading project-date"></h2>
+
+		<h2 class="increment-3-heading">Brief Description</h2>
+		<hr class="medium-divider">
+		<div id=extra-space></div>
+
+		<p>
+			This project was completed as part of a final project for my power electronics course at MIT. This was my first closed looped controlled BLDC motor controller that I had ever made. The motor controller used the PSOC (Programmable System On Chip), as the logic hardware. The PSOC was chosen because it allowed me to test circuits faster than by building them myself. The PSOC allows for reconfigurable analog and digital circuits to be programmed. 
+		</p>
+
+		<p>
+			In order to control the angular velocity of the motor, I used a simple proportional controller. The proportional controller would simply increase the voltage going into the BLDC motor if an external torque was applied in order to keep the desired angular velocity constant. Conversely, if the external torque on the motor decreased, the controller would compensate by decreasing the voltage into the motor.
+		</p>
+
+		<div class="center embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/r7Vo4dEHSVc" allowfullscreen></iframe>
+		</div>
+
+
+	</div>
+
+
+
+	<!-- Shared Footer -->
+	<script type="text/javascript" src="../../shared-resources/shared-footer.js"></script>
+	<script type="text/javascript" src="../projects-data.json"></script>
+	<script type="text/javascript" src="../projects-script.js"></script>
+</body>
+</html>

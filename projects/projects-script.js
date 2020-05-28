@@ -12,6 +12,14 @@ function main() {
   console.log(topHeadingHTML);
   var projectName = capitalizeFirstLetters(currentProject.name);
   topHeadingHTML.innerHTML = projectName;
+  
+  // var projectName = capitalizeFirstLetters(currentProject.name);
+  // var projectNameHTMLs = document.querySelectorAll(".project-name");
+  // for (var i=0; i<projectNameHTMLs.length; i++) {
+  //   var projectNameHTML = projectNameHTMLs[i];
+  //   projectNameHTML.innerHTML = projectName;
+  // }
+
 
   // Put project completion date on screen
   var dateString = getProjectDateString(currentProject);

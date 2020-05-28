@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<!-- Shared Head -->
+	<script type="text/javascript" src="../../shared-resources/shared-head.js"></script>
+
+	<!-- Project Styling -->
+	<link rel="stylesheet" type="text/css" href="../projects-styles.css">
+
+	<!-- Current Page Styling -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	
+</head>
+<body>
+	<!--  Navigation Bar -->
+	<script type="text/javascript" src="../../shared-resources/shared-navigation.js"></script>
+
+	<div class="section section-yin">
+		<h1 class="extra-large-heading top-heading"></h1>
+	</div>
+
+
+	<div class="section section-yang content-align-rule">
+
+		<h2 class="increment-2-heading project-date"></h2>
+
+		<h2 class="increment-3-heading">Brief Description</h2>
+		<hr class="medium-divider">
+		<div id=extra-space></div>
+
+		<p>
+			As part of a project for MIT's course Dynamics and Controls II, I used a lead controller to levitate a magnetic ball. A lead controller was chosen as the method of control in order increase the stability of the system. It does this by adding phase lead to the system, similar to the effect of a PD controller which increases damping.
+		</p>
+		<p>
+			To design the controller, I first specified a phase margin and a crossover frequency. Phase margin is related to the damping ratio of the system, and crossover frequency is related to the bandwidth of the closed-loop response.
+		</p>
+		<p>
+			Then I found the proper separation factor that would produce the desired maximum phase margin, and calculated the time constant of the pole of the system such that the maximum phase margin would align with the desired crossover frequency. Finally, I determined the controller gain at the crossover frequency that would give a total gain of 0 dB.
+		</p>
+		<p>
+			This approach to designing controllers is one of a couple frequency design methods. Frequency design methods to controls have some particular advantages. They allow you to infer performance and stability from the same plot. They allow you to use measured data rather than that of a transfer function model. The design process is also independent of the system order. Time delays are better handled, and the graphical techniques are relatively simple.
+		</p>
+		<p>
+			A frequency based approach was particularly helpful in the magnetic ball levitation controller because I was able to use a more accurate estimated plant transfer function based on measured data. 
+		</p>
+
+		<img class="responsive-fluid-image-rounded-md" src="https://drive.google.com/uc?export=view&id=1An_VsTgH6BGwoWKzaNSB25lVrCLCNwad">
+
+	</div>
+
+
+
+	<!-- Shared Footer -->
+	<script type="text/javascript" src="../../shared-resources/shared-footer.js"></script>
+	<script type="text/javascript" src="../projects-data.json"></script>
+	<script type="text/javascript" src="../projects-script.js"></script>
+</body>
+</html>

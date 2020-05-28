@@ -79,9 +79,31 @@ projectData = {
 			"permalink": "212-competition-robot",
 			"date": "2017-12-08",
 			"tags": ["mechanical engineering", "software engineering", "robotics"]
+		},
+		{
+			"name": "BLDC motor angular velocity controller using PSOC",
+			"permalink": "bldc-motor-angular-velocity-controller-using-psoc",
+			"date": "2018-12-12",
+			"tags": ["electrical engineering"]
+		},
+		{
+			"name": "smart tabletop garden",
+			"permalink": "smart-tabletop-garden",
+			"date": "2018-05-18",
+			"tags": ["mechanical engineering","electrical engineering","software engineering"]
+		},
+		{
+			"name": "pulmonary health screener",
+			"permalink": "pulmonary-health-screener",
+			"date": "2018-08-28",
+			"tags": ["software engineering"]
+		},
+		{
+			"name": "magnetic ball levitation",
+			"permalink": "magnetic-ball-levitation",
+			"date":"2018-12-03",
+			"tags": ["mechanical engineering","controls"]
 		}
-
-
 
 	]
 }
